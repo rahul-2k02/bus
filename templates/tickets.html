@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static%}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <title>To-Do List</title>
+</head>
+
+<body style="background-color: rgb(187, 47, 47);">
+
+    <div class="container">
+        <!-- <div class="row" style="padding-top: 20px;">
+        <img src="{% static 'img/bg2.png' %}" alt="" style="width: 400px;height: 200px;position: ;"></div> -->
+
+        <div class="row" style="padding-top: 20px;">
+            <img src="{% static 'img/bg2.png' %}" alt="" class="img-fluid mx-auto d-block float-center r-50"
+                style="width: 500px; height:250px;">
+        </div>
+
+        <hr style="position: relative;
+        top: 20px;
+        border: none;
+        height: 12px;
+        background: black;
+        margin-bottom: 50px;">
+        
+        <h1 style="text-align: center;padding-top: 10px;">Booking Details</h1>
+
+        <div class="row" style="padding-left: 7cm;">
+            <div class="col">
+
+                <div class="row">
+                    <form class="form-inline" action="/add/" method="post">
+                        {% csrf_token %}
+
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="form-group mx-sm-3 mb-2">
+                                    <label for="content" class="sr-only"><b>Name</b></label>
+                                    <input type="text" class="form-control" name="content" placeholder="Enter your name: ">
+                                </div>
+                                <div class="form-group mx-sm-3 mb-2">
+                                    <label for="content" class="sr-only"><b>Age</b></label>
+                                    <input type="text" class="form-control" name="content" placeholder="Enter your age: ">
+                                </div>
+                                
+                            </div>
+                        </div>
+
+          <a href="{% url 'booking_app:book' %}" class="btn btn-primary" style="background-color: rgb(187, 47, 47);">BOOK NOW</a>
+                
+
+
+
+
+                </div>
+
+
+                <!-- JavaScript Bundle with Popper -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+                    crossorigin="anonymous"></script>
+</body>
+
+</html>

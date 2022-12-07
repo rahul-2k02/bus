@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TICKET</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Book Your Tickets" />
+    <meta charset="UTF-8">
+    <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body id="top" style="background-color: rgb(187, 47, 47);">
+    <div id="cv" class="instaFade">
+        <div class="mainDetails">
+
+        <div id="mainArea" class="quickFade delayFive" style="border:double;">
+            <section>
+                <article>
+                    <div class="sectionTitle">
+                        <h1>Tickets</h1>
+                    </div>
+
+                    <div class="sectionContent">
+                        <p>Name: {{name}}</p>
+                        <p>Trip Date: {{trip_date}}</p>
+                        <p>Gender: {{gender}}</p>
+                        <p>Departure: {{dep}}</p>
+                        <p>Arrival: {{arr}}</p>
+
+                    </div>
+
+                </article>
+
+                <div class="clear"></div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+    <!-- <a onclick="this.href='data:text/html;charset=UTF-8,'+encodeURIComponent(document.documentElement.outerHTML)" href="#" download="final.html">Download</a> -->
+
+
+    <div id="content">
+ 
+   </div>
+   <div id="editor"></div>
+   <button id="cmd">generate PDF</button>
+
+
+
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+
+    <script type="text/javascript">
+        var pageTracker = _gat._getTracker("UA-3753241-1");
+
+        pageTracker._initData();
+
+        pageTracker._trackPageview();
+    </script>
+
+    <script>
+        var doc = new jsPDF();
+var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
+
+$('#cmd').click(function () {
+    doc.fromHTML($('#content').html(), 15, 15, {
+        'width': 170,
+            'elementHandlers': specialElementHandlers
+    });
+    doc.save('sample-file.pdf');
+});
+    </script>
+
+<!-- <a href="info.html" class="btn btn-warning">Download CV</a> -->
+
+<!-- <button onclick="window.print()">Print this page</button> -->
+
+
+</body>
+
+</html>
